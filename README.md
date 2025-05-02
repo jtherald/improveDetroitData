@@ -20,12 +20,15 @@ The response is a SeeClickFixResponse object, containing a list of IssueResponse
 Because of multiple objects and lists I created a MySQL database to store and easily search the data, with one table for Issues, Reporter (user object), Question (question, answer, issue id), and Request Type (currently only Traffic Issues). This allows easy string contains search on either Issue.description or Question.answer for mis-categorized items.
 
 The filtered dataset of Traffic Issues where the user answered "Car Traveling in bike lane" is on this Looker Studio dashboard: https://lookerstudio.google.com/u/1/reporting/ee8e458b-94b1-45b5-b93f-359f87e408b7/page/oQ4HF
+![image](https://github.com/user-attachments/assets/1bde2693-2916-4821-b128-36f90c1f54d7)
+
 
 ## warnings: I have not tested this out with any other categories or other cities. There are likely other fields in other categories or cities that would break the code.
 
 ## Endpoints:
-/getTrafficIssuesFromApi/ - Call the SeeClickFix Issues endpoint and collect all Detroit "Traffic Complaints" issues and save to MySQL database
-/writeLocalDatabaseToCSV/ - Export MySQL database to CSV files for each table (to export or share)
+getTrafficIssuesFromApi/ - Call the SeeClickFix Issues endpoint and collect all Detroit "Traffic Complaints" issues and save to MySQL database
+
+writeLocalDatabaseToCSV/ - Export MySQL database to CSV files for each table (to export or share)
 
 ## To Run:
 Create or connect to MySQL database and update application.properties connection info
