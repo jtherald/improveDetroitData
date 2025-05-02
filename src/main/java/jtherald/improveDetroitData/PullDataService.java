@@ -1,7 +1,6 @@
 package jtherald.improveDetroitData;
 
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
@@ -18,16 +17,17 @@ import jtherald.improveDetroitData.entity.RequestTypeEntity;
 import jtherald.improveDetroitData.mapper.IssueMapper;
 import jtherald.improveDetroitData.model.IssueResponseModel;
 import jtherald.improveDetroitData.model.SeeClickFixResponse;
-import jtherald.improveDetroitData.repository.*;
+import jtherald.improveDetroitData.repository.IssueRepository;
+import jtherald.improveDetroitData.repository.QuestionRepository;
+import jtherald.improveDetroitData.repository.ReporterRepository;
+import jtherald.improveDetroitData.repository.RequestTypeRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.util.retry.Retry;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -47,9 +47,6 @@ public class PullDataService {
     RequestTypeRepository requestTypeRepository;
 
     IssueMapper issueMapper;
-
-
-    ObjectMapper jsonMapper = new ObjectMapper();
 
     public PullDataService(WebClient webClient,
                            IssueMapper issueMapper,
