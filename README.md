@@ -22,6 +22,10 @@ I created this as a solution to download 'Car traveling in bike lane' issues rep
 - boot run!
 - hit endpoint /getTrafficIssuesFromApi
 
+I exported the data to BigQuery and a Looker Studio dashboard: https://lookerstudio.google.com/u/1/reporting/ee8e458b-94b1-45b5-b93f-359f87e408b7/page/oQ4HF
+![image](https://github.com/user-attachments/assets/1bde2693-2916-4821-b128-36f90c1f54d7)
+
+
 ### Background Info
 This Java SpringBoot code will hit the [SeeClickFix issue API](https://dev.seeclickfix.com/v2/issues/) pull data into a local mysql database.
 Issues endpoint is maximum 100 issues per page and SeeClickFix rate limits at 20 calls per minute, a max of 2,000 per min.
@@ -44,6 +48,3 @@ warnings: I have not tested this out with any other cities, or categories of iss
 - `status=open,acknowledged,closed,archived` these are all possible statuses
 - `fields[issue]=id,status,summary,description,lat,lng,created_at,acknowledged_at,closed_at,request_type,questions,reporter` which fields you want to be returned
 - `after=afterTimestamp` only get items created after this timestamp
-
-I exported the data to BigQuery and a Looker Studio dashboard: https://lookerstudio.google.com/u/1/reporting/ee8e458b-94b1-45b5-b93f-359f87e408b7/page/oQ4HF
-![image](https://github.com/user-attachments/assets/1bde2693-2916-4821-b128-36f90c1f54d7)
