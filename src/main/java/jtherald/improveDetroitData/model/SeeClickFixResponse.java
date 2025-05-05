@@ -10,8 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class SeeClickFixResponse {
-    List<IssueResponseModel> issues;
 
+    List<IssueModel> issues;
     MetadataResponseModel metadata;
 
 }

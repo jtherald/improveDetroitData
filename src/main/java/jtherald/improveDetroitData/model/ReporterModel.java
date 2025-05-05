@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 public class ReporterModel {
 
     Integer id;
-
     String name;
-
     String role;
 }

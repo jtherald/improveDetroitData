@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 public class RequestTypeResponseModel {
 
     Integer id;
-
     String title;
-
     String organization;
 }
