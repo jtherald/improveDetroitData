@@ -4,37 +4,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class IssueResponseModel {
+public class IssueModel {
 
     Integer id;
-
     String status;
-
     String summary;
-
     String description;
-
     Double lat;
-
     Double lng;
-
-    Date created_at;
-
-    Date acknowledged_at;
-
-    Date closed_at;
-
-    String url;
-
+    OffsetDateTime created_at;
+    OffsetDateTime acknowledged_at;
+    OffsetDateTime closed_at;
     ReporterModel reporter;
-
     RequestTypeResponseModel request_type;
-
     List<QuestionResponseModel> questions;
 }

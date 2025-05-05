@@ -14,8 +14,6 @@ public class QuestionResponseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     String question;
-
     String answer;
 }

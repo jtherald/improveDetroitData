@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
 
 @Data
 @AllArgsConstructor
@@ -16,10 +16,9 @@ public class IssueDTO {
     String description;
     Double lat;
     Double lng;
-    Date created_at;
-    Date acknowledged_at;
-    Date closed_at;
-    String url;
+    OffsetDateTime created_at;
+    OffsetDateTime acknowledged_at;
+    OffsetDateTime closed_at;
 
     Integer request_type_id;
     Integer reporter_id;

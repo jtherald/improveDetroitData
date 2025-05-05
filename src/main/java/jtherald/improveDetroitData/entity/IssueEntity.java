@@ -3,7 +3,7 @@ package jtherald.improveDetroitData.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @Entity
@@ -17,10 +17,9 @@ public class IssueEntity {
     String description;
     Double lat;
     Double lng;
-    Date created_at;
-    Date acknowledged_at;
-    Date closed_at;
-    String url;
+    OffsetDateTime created_at;
+    OffsetDateTime acknowledged_at;
+    OffsetDateTime closed_at;
 
     @ManyToOne(cascade = CascadeType.ALL)
     RequestTypeEntity request_type;

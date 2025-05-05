@@ -10,19 +10,12 @@ import lombok.NoArgsConstructor;
 public class PaginationModel {
 
     Integer entries;
-
     Integer page;
-
     Integer per_page;
-
     Integer pages;
-
     Integer next_page;
-
     String next_page_url;
-
     Integer previous_page;
-
     String previous_page_url;
 
 }

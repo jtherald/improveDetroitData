@@ -24,8 +24,8 @@ dependencies {
 	implementation 'com.mysql:mysql-connector-j:9.2.0'
 	implementation 'com.opencsv:opencsv:5.10'
 	implementation(platform("com.google.cloud:libraries-bom:26.59.0"))
-	implementation("com.google.cloud:google-cloud-bigquery")
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.19.0-rc2'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.0'
 
 	// Lombok
 	compileOnly 'org.projectlombok:lombok:1.18.38'
