@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class QuestionResponseModel {
+public class QuestionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

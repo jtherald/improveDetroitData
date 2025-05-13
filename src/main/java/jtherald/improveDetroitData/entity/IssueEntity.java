@@ -13,8 +13,8 @@ public class IssueEntity {
     @Id
     Integer id;
     String status;
-    String summary;
     String description;
+    String summary;
     Double lat;
     Double lng;
     OffsetDateTime created_at;

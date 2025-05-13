@@ -12,6 +12,6 @@ import java.util.List;
 public class SeeClickFixResponse {
 
     List<IssueModel> issues;
-    MetadataResponseModel metadata;
+    MetadataModel metadata;
 
 }

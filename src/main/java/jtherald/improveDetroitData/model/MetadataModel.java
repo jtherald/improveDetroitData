@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class RequestTypeResponseModel {
+public class MetadataModel {
 
-    Integer id;
-    String title;
-    String organization;
+    PaginationModel pagination;
 }

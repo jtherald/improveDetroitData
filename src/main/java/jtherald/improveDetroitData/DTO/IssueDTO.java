@@ -12,8 +12,8 @@ import java.time.OffsetDateTime;
 public class IssueDTO {
     Integer id;
     String status;
-    String summary;
     String description;
+    String summary;
     Double lat;
     Double lng;
     OffsetDateTime created_at;
