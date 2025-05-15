@@ -14,14 +14,14 @@ public class IssueModel {
 
     Integer id;
     String status;
-    String summary;
     String description;
+    String summary;
     Double lat;
     Double lng;
     OffsetDateTime created_at;
     OffsetDateTime acknowledged_at;
     OffsetDateTime closed_at;
     ReporterModel reporter;
-    RequestTypeResponseModel request_type;
-    List<QuestionResponseModel> questions;
+    RequestTypeModel request_type;
+    List<QuestionModel> questions;
 }

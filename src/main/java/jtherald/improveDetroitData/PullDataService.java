@@ -72,7 +72,7 @@ public class PullDataService {
                                 .queryParam("details", "true")
                                 .queryParam("page", currentPage)
                                 .queryParam("status", "open,acknowledged,closed,archived")
-                                .queryParam("fields[issue]", "id,status,summary,description,lat,lng,created_at,acknowledged_at,closed_at,request_type,questions,reporter")
+                                .queryParam("fields[issue]", "id,status,description,summary,lat,lng,created_at,acknowledged_at,closed_at,request_type,reporter,questions")
                                 .queryParam("after", afterTimestamp)
                                 .build())
                         .retrieve()
@@ -88,9 +88,6 @@ public class PullDataService {
             long endTime = System.nanoTime();
             log.info("Issues Imported:"+count+" , Duration (seconds): "+(endTime-startTime)/1000000000);
 
-            createCleanStringTables();
-            log.info("clean tables created");
-
         } catch (Exception e) {
             log.error(e.getMessage());
             log.error("FAILED ON PAGE NUMBER: "+page);
@@ -102,16 +99,6 @@ public class PullDataService {
     @Transactional
     public void saveResponseIntoDatabase(SeeClickFixResponse response) {
         issueRepository.saveAll(issueMapper.toIssueEntity(response.getIssues()));
-    }
-
-    @Transactional
-    public void createCleanStringTables() {
-        //create a new 'clean' table for Issue and Question without \r \n \t in the string fields, good for exporting to csv
-        issueRepository.createTableIssue();
-        issueRepository.insertIssueCleanStrings();
-
-        questionRepository.createTableIssue();
-        questionRepository.insertIssueCleanStrings();
     }
 
     public IssueModel getIssueModelFromLocalDatabase(Integer id) {
