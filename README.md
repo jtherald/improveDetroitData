@@ -48,3 +48,13 @@ warnings: I have not tested this out with any other cities, or categories of iss
 - `status=open,acknowledged,closed,archived` these are all possible statuses
 - `fields[issue]=id,status,summary,description,lat,lng,created_at,acknowledged_at,closed_at,request_type,questions,reporter` which fields you want to be returned
 - `after=afterTimestamp` only get items created after this timestamp
+
+
+Code to trim special characters out of the issue and question tables
+drop table issue_clean;
+CREATE TABLE issue_clean SELECT * FROM issue;
+UPDATE issue_clean set description = REPLACE(REPLACE(REPLACE(description, '\n', ' '), '\t', ' '), '\r', ' ');
+
+drop table question_clean;
+CREATE TABLE  question_clean SELECT * FROM question;
+UPDATE question_clean set question = REPLACE(REPLACE(REPLACE(question, '\n', ' '), '\t', ' '), '\r', ' '), answer = REPLACE(REPLACE(REPLACE(answer, '\n', ' '), '\t', ' '), '\r', ' ');
