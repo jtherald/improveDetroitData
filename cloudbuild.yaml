@@ -23,5 +23,6 @@ steps:
   - name: gcr.io/cloud-builders/docker
     args: ["build", "-t", "us-central1-docker.pkg.dev/improvedetroit/improvedetroitdata/improvedetroit-img", "--build-arg=JAR_FILE=build/libs/improvedetroit-img-1.0.0.jar", "."]
 images: ["us-central1-docker.pkg.dev/improvedetroit/improvedetroitdata/improvedetroit-img"]
-logging: CLOUD_LOGGING_ONLY
+options:
+  logging: CLOUD_LOGGING_ONLY
 # [END cloudbuild_gradle]
